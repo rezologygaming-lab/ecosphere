@@ -770,6 +770,39 @@ section {
   border-color: var(--green);
   background: rgba(168,255,120,0.07);
   transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(168,255,120,0.1);
+}
+
+.choice-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.choice-label {
+  display: block;
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--green);
+}
+
+.choice-desc {
+  display: block;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.start-btn {
+  background: rgba(168,255,120,0.06);
+  border-color: rgba(168,255,120,0.3);
+}
+
+.start-btn:hover {
+  background: rgba(168,255,120,0.12);
+  border-color: rgba(168,255,120,0.5);
 }
 
 .choice-label {
@@ -789,8 +822,9 @@ section {
   line-height: 1.8;
 }
 
-.game-log div {
-  padding: 2px 0;
+.game-log div,
+.log-entry {
+  padding: 4px 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   animation: fadeIn 0.3s ease;
 }
@@ -798,6 +832,9 @@ section {
 @keyframes fadeIn { from { opacity: 0; transform: translateX(-10px); } to { opacity: 1; } }
 
 .game-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: 2rem;
   animation: fadeUp 0.5s ease;
