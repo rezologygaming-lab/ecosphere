@@ -64,13 +64,7 @@
     <div class="orb orb-2"></div>
     <div class="orb orb-3"></div>
     <div class="globe-wrap">
-      <div class="globe">
-        <div class="globe-inner">
-          <span class="globe-emoji">🌍</span>
-        </div>
-        <div class="globe-ring"></div>
-        <div class="globe-ring ring-2"></div>
-      </div>
+      <canvas id="globe-canvas"></canvas>
     </div>
   </div>
   <div class="scroll-hint">
@@ -405,7 +399,9 @@
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/canvas.js"></script>
+<script src="js/globe.js"></script>
 <script src="js/main.js"></script>
 <script src="js/game.js"></script>
 </body>

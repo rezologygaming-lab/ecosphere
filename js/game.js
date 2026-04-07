@@ -198,8 +198,7 @@ function resetGame() {
   document.getElementById('game-result').style.display = 'none';
   document.getElementById('game-log').innerHTML = '';
   updateHUD();
-  loadRound();
-  // Reset initial event text
+  // Reset to welcome screen
   document.getElementById('event-icon').textContent = '🌆';
   document.getElementById('event-text').textContent = 'You are the new Mayor of EcoCity. The city runs on coal and has a growing population. Your choices over the next 10 years will determine the planet\'s fate.';
   document.getElementById('game-choices').innerHTML = `<button class="choice-btn" style="grid-column:span 2" onclick="loadRound()"><span class="choice-label">Begin Your Term →</span>Press to start making decisions</button>`;
