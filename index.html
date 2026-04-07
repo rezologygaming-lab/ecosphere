@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoSphere — Environmental Science Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Animated Canvas Background -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- Floating particles -->
+<div class="particles" id="particles"></div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <svg class="leaf-icon" viewBox="0 0 40 40" fill="none">
+      <path d="M20 5 C30 5 38 13 38 23 C38 33 30 38 20 38 C10 38 2 30 2 20 C2 10 10 5 20 5Z" fill="url(#leafGrad)" opacity="0.9"/>
+      <path d="M20 38 C20 38 12 28 12 18 C12 10 16 6 20 5" stroke="#a8ff78" stroke-width="1.5" fill="none"/>
+      <defs>
+        <linearGradient id="leafGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#a8ff78"/>
+          <stop offset="100%" stop-color="#1a9e4a"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <span>EcoSphere</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#stats">Data</a></li>
+    <li><a href="#topics">Topics</a></li>
+    <li><a href="#climate">Climate</a></li>
+    <li><a href="#solutions">Solutions</a></li>
+    <li><a href="#game">Game</a></li>
+  </ul>
+  <div class="nav-cta">
+    <span class="live-dot"></span> Live Earth Data
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge">🌍 Environmental Science 2025</div>
+    <h1 class="hero-title">
+      Our Planet<br/>
+      <span class="gradient-text">Needs Us</span><br/>
+      Now.
+    </h1>
+    <p class="hero-sub">Explore climate science, biodiversity, and environmental systems through real data, stunning visuals, and interactive tools.</p>
+    <div class="hero-buttons">
+      <a href="#stats" class="btn-primary">Explore Data →</a>
+      <a href="#game" class="btn-ghost">Play EcoGame</a>
+    </div>
+  </div>
+  <div class="hero-orb">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="globe-wrap">
+      <div class="globe">
+        <div class="globe-inner">
+          <span class="globe-emoji">🌍</span>
+        </div>
+        <div class="globe-ring"></div>
+        <div class="globe-ring ring-2"></div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>scroll to explore</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- LIVE STATS -->
+<section class="stats-section" id="stats">
+  <div class="section-label">REAL-TIME INDICATORS</div>
+  <h2 class="section-title">Earth's Vital Signs</h2>
+  <p class="section-sub">Updated approximations based on latest scientific consensus data from NASA, NOAA, and IPCC reports.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card" data-color="#ff6b6b">
+      <div class="stat-icon">🌡️</div>
+      <div class="stat-value" data-count="1.2">0</div>
+      <div class="stat-unit">°C above pre-industrial</div>
+      <div class="stat-label">Global Temperature Rise</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:60%; background:linear-gradient(90deg,#ff6b6b,#ee5a24)"></div></div>
+    </div>
+    <div class="stat-card" data-color="#ffd93d">
+      <div class="stat-icon">💨</div>
+      <div class="stat-value counter" data-target="421">0</div>
+      <div class="stat-unit">parts per million</div>
+      <div class="stat-label">Atmospheric CO₂</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:84%; background:linear-gradient(90deg,#ffd93d,#f9ca24)"></div></div>
+    </div>
+    <div class="stat-card" data-color="#4ecdc4">
+      <div class="stat-icon">🧊</div>
+      <div class="stat-value counter" data-target="13">0</div>
+      <div class="stat-unit">% per decade</div>
+      <div class="stat-label">Arctic Ice Loss Rate</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:45%; background:linear-gradient(90deg,#4ecdc4,#1abc9c)"></div></div>
+    </div>
+    <div class="stat-card" data-color="#a8ff78">
+      <div class="stat-icon">🌊</div>
+      <div class="stat-value counter" data-target="3">0</div>
+      <div class="stat-unit">mm / year</div>
+      <div class="stat-label">Sea Level Rise Rate</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:30%; background:linear-gradient(90deg,#a8ff78,#1a9e4a)"></div></div>
+    </div>
+    <div class="stat-card" data-color="#ff9ff3">
+      <div class="stat-icon">🌿</div>
+      <div class="stat-value counter" data-target="10">0</div>
+      <div class="stat-unit">million ha / year</div>
+      <div class="stat-label">Deforestation Rate</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:50%; background:linear-gradient(90deg,#ff9ff3,#f368e0)"></div></div>
+    </div>
+    <div class="stat-card" data-color="#74b9ff">
+      <div class="stat-icon">🐾</div>
+      <div class="stat-value counter" data-target="69">0</div>
+      <div class="stat-unit">% decline since 1970</div>
+      <div class="stat-label">Wildlife Population Loss</div>
+      <div class="stat-bar"><div class="stat-fill" style="width:69%; background:linear-gradient(90deg,#74b9ff,#0984e3)"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOPICS -->
+<section class="topics-section" id="topics">
+  <div class="section-label">KEY AREAS</div>
+  <h2 class="section-title">Environmental Topics</h2>
+
+  <div class="topics-grid">
+    <div class="topic-card wide">
+      <div class="topic-bg" style="background:linear-gradient(135deg,#0f3443,#34e89e)"></div>
+      <div class="topic-content">
+        <div class="topic-icon-big">🌊</div>
+        <h3>Ocean Acidification</h3>
+        <p>Since the Industrial Revolution, ocean pH has dropped by 0.1 units — a 26% increase in acidity. This disrupts marine food chains, coral bleaching, and shellfish development. The ocean absorbs ~30% of atmospheric CO₂.</p>
+        <div class="topic-tags"><span>Marine Biology</span><span>Chemistry</span><span>Climate</span></div>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-bg" style="background:linear-gradient(135deg,#1a0533,#7c3aed)"></div>
+      <div class="topic-content">
+        <div class="topic-icon-big">🌡️</div>
+        <h3>Greenhouse Effect</h3>
+        <p>Natural vs enhanced greenhouse effect. CO₂, CH₄, N₂O and water vapor trap heat, driving global warming beyond natural cycles.</p>
+        <div class="topic-tags"><span>Atmosphere</span><span>Physics</span></div>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-bg" style="background:linear-gradient(135deg,#0d1b2a,#e76f51)"></div>
+      <div class="topic-content">
+        <div class="topic-icon-big">🔥</div>
+        <h3>Wildfires & Ecosystems</h3>
+        <p>Climate change intensifies wildfire frequency and scale. Forests store carbon — burning them releases centuries of stored carbon in days.</p>
+        <div class="topic-tags"><span>Ecology</span><span>Carbon Cycle</span></div>
+      </div>
+    </div>
+    <div class="topic-card">
+      <div class="topic-bg" style="background:linear-gradient(135deg,#003d2b,#a8ff78)"></div>
+      <div class="topic-content">
+        <div class="topic-icon-big">🌱</div>
+        <h3>Soil Health</h3>
+        <p>Healthy soil holds 3x more carbon than the atmosphere. Intensive farming, erosion, and chemical use threaten this critical ecosystem.</p>
+        <div class="topic-tags"><span>Agriculture</span><span>Carbon Sink</span></div>
+      </div>
+    </div>
+    <div class="topic-card wide">
+      <div class="topic-bg" style="background:linear-gradient(135deg,#0a1628,#2980b9)"></div>
+      <div class="topic-content">
+        <div class="topic-icon-big">🧊</div>
+        <h3>Cryosphere & Feedback Loops</h3>
+        <p>Ice reflects sunlight (albedo effect). As Arctic ice melts, dark ocean water absorbs more heat, accelerating warming further — a dangerous positive feedback loop. Permafrost thaw releases methane, a greenhouse gas 80x more potent than CO₂ over 20 years.</p>
+        <div class="topic-tags"><span>Physics</span><span>Arctic</span><span>Feedback Loops</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIMATE TIMELINE -->
+<section class="climate-section" id="climate">
+  <div class="section-label">HISTORY & PROJECTION</div>
+  <h2 class="section-title">Climate Through Time</h2>
+  <div class="timeline">
+    <div class="timeline-item left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">1750</div>
+        <h4>Industrial Revolution Begins</h4>
+        <p>Coal-powered industry starts injecting CO₂ into the atmosphere. Pre-industrial CO₂: 280 ppm.</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">1896</div>
+        <h4>Arrhenius Predicts Global Warming</h4>
+        <p>Swedish scientist Svante Arrhenius first calculates that doubling CO₂ would raise global temperature by 5–6°C.</p>
+      </div>
+    </div>
+    <div class="timeline-item left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">1958</div>
+        <h4>Keeling Curve Launched</h4>
+        <p>Charles Keeling begins measuring atmospheric CO₂ at Mauna Loa, creating the most important dataset in climate science.</p>
+      </div>
+    </div>
+    <div class="timeline-item right">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">1988</div>
+        <h4>IPCC Founded</h4>
+        <p>The Intergovernmental Panel on Climate Change established. NASA scientist James Hansen testifies to Congress about global warming.</p>
+      </div>
+    </div>
+    <div class="timeline-item left">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2015</div>
+        <h4>Paris Agreement</h4>
+        <p>196 countries commit to limiting warming to 1.5–2°C above pre-industrial levels. A landmark in global environmental policy.</p>
+      </div>
+    </div>
+    <div class="timeline-item right future">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="timeline-year">2050</div>
+        <h4>Net Zero Target</h4>
+        <p>The global goal: achieve net-zero carbon emissions by 2050. Requires transforming energy, transport, agriculture, and industry.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="solutions-section" id="solutions">
+  <div class="section-label">ACTION</div>
+  <h2 class="section-title">Solutions That Scale</h2>
+  <div class="solutions-grid">
+    <div class="sol-card">
+      <div class="sol-num">01</div>
+      <div class="sol-icon">☀️</div>
+      <h3>Renewable Energy</h3>
+      <p>Solar and wind now the cheapest electricity sources in history. Solar capacity has doubled every 2 years for a decade. Transitioning power grids globally is the single largest lever available.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:90%"></div></div>
+        <span>High Impact</span>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-num">02</div>
+      <div class="sol-icon">🌳</div>
+      <h3>Reforestation</h3>
+      <p>Restoring 900 million hectares of forests could capture 2/3 of all human-caused CO₂ emissions. The Trillion Trees initiative is one of the most scalable nature-based solutions.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:75%"></div></div>
+        <span>High Impact</span>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-num">03</div>
+      <div class="sol-icon">🏙️</div>
+      <h3>Smart Cities</h3>
+      <p>Urban areas generate 70% of global emissions. Green buildings, electric transport, efficient waste management, and urban forests can dramatically cut city footprints.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:65%"></div></div>
+        <span>Medium–High</span>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-num">04</div>
+      <div class="sol-icon">🌊</div>
+      <h3>Ocean Conservation</h3>
+      <p>Marine protected areas, restoring mangroves, seagrass beds, and kelp forests. Blue carbon ecosystems store carbon 5x faster per hectare than tropical forests.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:55%"></div></div>
+        <span>Medium Impact</span>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-num">05</div>
+      <div class="sol-icon">🥗</div>
+      <h3>Sustainable Diet</h3>
+      <p>Food systems account for 26% of global emissions. Reducing meat consumption — especially beef — and cutting food waste alone could close 20% of the emissions gap by 2050.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:50%"></div></div>
+        <span>Medium Impact</span>
+      </div>
+    </div>
+    <div class="sol-card">
+      <div class="sol-num">06</div>
+      <div class="sol-icon">⚡</div>
+      <h3>Carbon Capture</h3>
+      <p>Direct Air Capture (DAC) and carbon storage technologies are emerging at scale. Combined with renewable energy, these could remove gigatons of CO₂ from the atmosphere.</p>
+      <div class="sol-impact">
+        <span class="impact-label">CO₂ Reduction Potential</span>
+        <div class="impact-bar"><div style="width:40%"></div></div>
+        <span>Emerging Tech</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MINI GAME -->
+<section class="game-section" id="game">
+  <div class="section-label">INTERACTIVE</div>
+  <h2 class="section-title">EcoBalance — The Game</h2>
+  <p class="section-sub">Manage a city for 10 years. Balance emissions, economy, and population happiness. Every decision has consequences.</p>
+
+  <div class="game-container" id="game-container">
+    <div class="game-hud">
+      <div class="hud-stat">
+        <span class="hud-icon">📅</span>
+        <div>
+          <div class="hud-val" id="g-year">2025</div>
+          <div class="hud-key">Year</div>
+        </div>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-icon">💨</span>
+        <div>
+          <div class="hud-val" id="g-co2">50</div>
+          <div class="hud-key">CO₂ Level</div>
+        </div>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-icon">💰</span>
+        <div>
+          <div class="hud-val" id="g-eco">70</div>
+          <div class="hud-key">Economy</div>
+        </div>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-icon">😊</span>
+        <div>
+          <div class="hud-val" id="g-happy">60</div>
+          <div class="hud-key">Happiness</div>
+        </div>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-icon">🌿</span>
+        <div>
+          <div class="hud-val" id="g-eco-score">100</div>
+          <div class="hud-key">EcoScore</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="game-event" id="game-event">
+      <div class="event-icon" id="event-icon">🌆</div>
+      <div class="event-text" id="event-text">You are the new Mayor of EcoCity. The city runs on coal and has a growing population. Your choices over the next 10 years will determine the planet's fate.</div>
+    </div>
+
+    <div class="game-choices" id="game-choices">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="game-log" id="game-log"></div>
+
+    <div class="game-result" id="game-result" style="display:none">
+      <div class="result-icon" id="result-icon">🌍</div>
+      <h3 id="result-title">Game Over</h3>
+      <p id="result-text"></p>
+      <button class="btn-primary" onclick="resetGame()">Play Again →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg class="leaf-icon" viewBox="0 0 40 40" fill="none">
+        <path d="M20 5 C30 5 38 13 38 23 C38 33 30 38 20 38 C10 38 2 30 2 20 C2 10 10 5 20 5Z" fill="url(#leafGrad2)" opacity="0.9"/>
+        <path d="M20 38 C20 38 12 28 12 18 C12 10 16 6 20 5" stroke="#a8ff78" stroke-width="1.5" fill="none"/>
+        <defs>
+          <linearGradient id="leafGrad2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a8ff78"/>
+            <stop offset="100%" stop-color="#1a9e4a"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>EcoSphere</span>
+    </div>
+    <p class="footer-copy">Built for Environmental Science · Data sourced from NASA, NOAA, IPCC · 2025</p>
+    <div class="footer-links">
+      <a href="https://climate.nasa.gov" target="_blank">NASA Climate</a>
+      <a href="https://www.noaa.gov" target="_blank">NOAA</a>
+      <a href="https://www.ipcc.ch" target="_blank">IPCC Reports</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/canvas.js"></script>
+<script src="js/main.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
